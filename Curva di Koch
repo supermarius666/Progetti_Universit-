@@ -1,0 +1,33 @@
+import turtle as t
+
+def controllo_input(iterazione):
+    if iterazione == "":
+        iterazione = 4
+    else:
+        iterazione = int(iterazione)
+    return iterazione
+
+def koch(len_i, iterazione):
+    if iterazione == 0:
+        t.forward(len_i)
+    else:
+        len_i/=3
+        koch(len_i,iterazione-1)
+        t.left(60)
+        koch(len_i,iterazione-1)
+        t.right(120)
+        koch(len_i,iterazione-1)
+        t.left(60)
+        koch(len_i,iterazione-1)
+
+
+tartaruga = t.Turtle()
+
+t.speed(0)
+len_i = 300
+iterazione = input("Inserici il numewro di iterazioni: ")
+iterazione = controllo_input(iterazione)
+
+koch(len_i,iterazione)
+
+t.mainloop()
