@@ -1,0 +1,9 @@
+def sqrt_(b):
+    u = 1
+    for _ in range(10):
+        x =(1/2)*(u+(b/u))
+        u = x
+    print("La radice quadrata di",b,"è",u)
+
+b = int(input('numero: '))
+sqrt_(b)
